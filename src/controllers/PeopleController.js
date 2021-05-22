@@ -15,7 +15,7 @@ module.exports = {
   },
 
   async show(request, response) {
-    const { firstName } = request.body;
+    const { firstName } = request.params;
     const people = await People.find({ firstName })
     if (people.length !== 0) {
       return response.status(200).json(people);
@@ -29,5 +29,18 @@ module.exports = {
       if (err) return response.status(404).json({ "message": "Houve um erro  !!!" });
       return response.status(200).json({ "message": "Deletado com Sucesso !!!" });
     });
+  },
+
+  async index(request, response) {
+    People.find({}, function (err, peoples) {
+      let peopleList = {};
+
+      peoples.forEach(function (people) {
+        peopleList[people._id] = people;
+      });
+      
+      return response.status(200).json(peopleList);
+    });
+    
   },
 };
