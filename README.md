@@ -17,10 +17,8 @@ Prova usando node
 - [express] - Bla Bla Bla Bla!
 - [mongoose] - Bla Bla Bla Bla!
 
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
 
-## Installation
+## Instalação
 
 Prova requer [Node.js](https://nodejs.org/) v16+ to run.
 
