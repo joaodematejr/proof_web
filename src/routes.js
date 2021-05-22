@@ -11,6 +11,9 @@ routes.get("/people/:firstName", PeopleController.show);
 routes.delete("/people/:id", PeopleController.destroy);
 
 routes.post("/eventRoom", EventRoomController.store);
+routes.get("/eventRoom/:_id", EventRoomController.show);
+routes.put("/eventRoom/:_id", EventRoomController.update);
+
 
 
 
